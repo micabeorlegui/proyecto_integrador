@@ -1,0 +1,17 @@
+*{
+    box-sizing: border-box;
+}
+body{
+    background-color: red;
+}
+
+ul, ol, li, a{
+    list-style: none;
+    text-decoration: none;
+    list-style-type: none;
+}
+
+.mainContainer{
+    margin: 0 auto;
+    width: 85%;
+}
