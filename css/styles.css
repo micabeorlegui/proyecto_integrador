@@ -107,3 +107,72 @@ h2{
     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
 }
 
+.seriesPopulares{
+    display: flex;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+    flex-direction: row;
+}
+
+.seriesPopulares div{
+    display: inline-block;
+    width: 250px;
+    align-items: center;
+}
+
+.seriesPopulares div h3{
+    color:rgb(247, 134, 134);
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    margin-top: 20px;
+}
+
+.seriesPopulares div p{
+    color:rgb(247, 134, 134);
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    margin-top: 20px;
+}
+
+.seriesPopulares div img{
+    width: 230px;
+    margin-top: 5px;
+}
+
+.seriesPopulares div h4{
+    color:rgb(247, 134, 134);
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+.recomendadoParaTi{
+    display: flex;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+    flex-direction: row;
+}
+
+.recomendadoParaTi div{
+    display: inline-block;
+    width: 250px;
+    align-items: center;
+}
+
+.recomendadoParaTi div h3{
+    color:rgb(247, 134, 134);
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    margin-top: 20px;
+}
+
+.recomendadoParaTi div p{
+    color:rgb(247, 134, 134);
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    margin-top: 20px;
+}
+
+.recomendadoParaTi div img{
+    width: 230px;
+    margin-top: 5px;
+}
+
+.recomendadoParaTi div h4{
+    color:rgb(247, 134, 134);
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
