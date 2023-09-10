@@ -216,7 +216,7 @@ h2{
     margin-right: 20px;
 }
 
-.detail_movie{
+.detail_items{
     display: flex;
     flex-direction: column;
     flex-wrap: wrap;
@@ -225,22 +225,22 @@ h2{
     margin-left: 20px;
 }
 
-.detail_movie h2{
+.detail_items h2{
     font-size: xx-large;
     display: inline;
 }
 
-.detail_movie ul{
+.detail_items ul{
     width: 100%;
 }
 
-.detail_movie ul li{
+.detail_items ul li{
     color: rgb(247, 134, 134);
     font-size: large;
     margin-bottom: 15px;
 }
 
-.detail_movie button{
+.detail_items button{
     border: solid rgb(247, 134, 134);
     border-radius: 30px;
     background-color: rgb(247, 134, 134);
