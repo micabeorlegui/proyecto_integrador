@@ -10,6 +10,7 @@ ul, ol, li, a{
     list-style: none;
     text-decoration: none;
     list-style-type: none;
+    padding: 0;
 }
 
 .mainContainer{
@@ -23,8 +24,7 @@ ul, ol, li, a{
 }
 
 h2{
-    color: rgb(255, 118, 118);
-    margin-left: 8px;
+    color: rgb(247, 134, 134);
 }
 
 
@@ -200,6 +200,50 @@ h2{
     margin-right: 90px;
     margin-left: 90px;
     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
-    font-size: large
-    ;
+    font-size: large;
+}
+
+/* css detail movie y serie */
+
+.detail{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+}
+
+.detail_img{
+    width: 300px;
+    margin-right: 20px;
+}
+
+.detail_movie{
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    align-content: flex-end center;
+    width: 600px;
+    margin-left: 20px;
+}
+
+.detail_movie h2{
+    font-size: xx-large;
+    display: inline;
+}
+
+.detail_movie ul{
+    width: 100%;
+}
+
+.detail_movie ul li{
+    color: rgb(247, 134, 134);
+    font-size: large;
+    margin-bottom: 15px;
+}
+
+.detail_movie button{
+    border: solid rgb(247, 134, 134);
+    border-radius: 30px;
+    background-color: rgb(247, 134, 134);
+    color: white;
+    font-size: large;
 }
