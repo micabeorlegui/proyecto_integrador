@@ -429,3 +429,40 @@ h2{
     width: 230px;
     margin-top: 5px;
 }
+
+/* css favoritos */
+.favoritos{
+    display: flex;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+    flex-direction: row;
+    width: 100%;
+}
+
+.favoritos div{
+    display: inline-block;
+    width: 250px;
+    align-items: center;
+}
+
+.favoritos div h3{
+    color:rgb(247, 134, 134);
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    margin-top: 20px;
+}
+
+.favoritos div p{
+    color:rgb(247, 134, 134);
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    margin-top: 20px;
+}
+
+.favoritos div img{
+    width:230px;
+    margin-top:20px;
+}
+
+.favoritos div h4{
+    color:rgb(247, 134, 134);
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
