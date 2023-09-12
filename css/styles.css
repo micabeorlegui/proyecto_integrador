@@ -240,6 +240,10 @@ h2{
     margin-bottom: 15px;
 }
 
+.detail_items ul li a{
+    color: rgb(247, 134, 134);
+}
+
 .detail_items button{
     border: solid rgb(247, 134, 134);
     border-radius: 30px;
