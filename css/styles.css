@@ -255,10 +255,6 @@ h2{
 /* css genres */
 
 .genres{
-    color: rgb(247, 134, 134);
-}
-
-.lista_peliculas{
     display: flex;
     justify-content: space-evenly;
     flex-wrap: wrap;
