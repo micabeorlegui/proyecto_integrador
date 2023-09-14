@@ -23,7 +23,7 @@ ul, ol, li, a{
     width: 90%;
 }
 
-h2{
+h2, p{
     color: rgb(247, 134, 134);
 }
 
@@ -264,19 +264,7 @@ h2{
     margin-bottom: 100px;
 }
 
-.detail-genres h2{
-    color:rgb(247, 134, 134);
-    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
-    margin-top: 20px;
-}
-
-.detail-genres p{
-    color:rgb(247, 134, 134);
-    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
-    margin-top: 20px;
-}
-
-.detail-accion{
+.det_genres{
     display: flex;
     justify-content: space-evenly;
     flex-wrap: wrap;
@@ -284,147 +272,23 @@ h2{
     width: 100%;
 }
 
-.detail-accion div{
+.det_genres div{
     display: inline-block;
     width: 250px;
-    align-items: center;
 }
 
-.detail-accion div h3{
-    color:rgb(247, 134, 134);
-    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
-    margin-top: 20px;
-}
-
-.detail-accion div img{
+.det_genres div img{
     width: 230px;
     margin-top: 5px;
 }
 
-.detail-comedia{
-    display: flex;
-    justify-content: space-evenly;
-    flex-wrap: wrap;
-    flex-direction: row;
-    width: 100%;
-}
-
-.detail-comedia div{
-    display: inline-block;
-    width: 250px;
-    align-items: center;
-}
-
-.detail-comedia div h3{
+.det_genres div h3{
     color:rgb(247, 134, 134);
     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
     margin-top: 20px;
-}
-
-.detail-comedia div img{
-    width: 230px;
-    margin-top: 5px;
-}
-
-.detail-drama{
-    display: flex;
-    justify-content: space-evenly;
-    flex-wrap: wrap;
-    flex-direction: row;
-    width: 100%;
-}
-
-.detail-drama div{
-    display: inline-block;
-    width: 250px;
     align-items: center;
 }
 
-.detail-drama div h3{
-    color:rgb(247, 134, 134);
-    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
-    margin-top: 20px;
-}
-
-.detail-drama div img{
-    width: 230px;
-    margin-top: 5px;
-}
-
-.detail-suspenso{
-    display: flex;
-    justify-content: space-evenly;
-    flex-wrap: wrap;
-    flex-direction: row;
-    width: 100%;
-}
-
-.detail-suspenso div{
-    display: inline-block;
-    width: 250px;
-    align-items: center;
-}
-
-.detail-suspenso div h3{
-    color:rgb(247, 134, 134);
-    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
-    margin-top: 20px;
-}
-
-.detail-suspenso div img{
-    width: 230px;
-    margin-top: 5px;
-}
-
-.detail-romance{
-    display: flex;
-    justify-content: space-evenly;
-    flex-wrap: wrap;
-    flex-direction: row;
-    width: 100%;
-}
-
-.detail-romance div{
-    display: inline-block;
-    width: 250px;
-    align-items: center;
-}
-
-.detail-romance div h3{
-    color:rgb(247, 134, 134);
-    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
-    margin-top: 20px;
-}
-
-.detail-romance div img{
-    width: 230px;
-    margin-top: 5px;
-}
-
-.detail-crimen{
-    display: flex;
-    justify-content: space-evenly;
-    flex-wrap: wrap;
-    flex-direction: row;
-    width: 100%;
-}
-
-.detail-crimen div{
-    display: inline-block;
-    width: 250px;
-    align-items: center;
-}
-
-.detail-crimen div h3{
-    color:rgb(247, 134, 134);
-    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
-    margin-top: 20px;
-}
-
-.detail-crimen div img{
-    width: 230px;
-    margin-top: 5px;
-}
 
 /* css favoritos */
 .favoritos{
