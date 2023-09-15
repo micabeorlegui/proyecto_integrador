@@ -226,3 +226,23 @@ input::placeholder{
     width:230px;
     margin-top: 10px;
 }
+
+/* search-results */
+.search{
+    display: flex;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+    flex-direction: row;
+    width: 100%;
+}
+
+.search div{
+    display: inline-block;
+    width: 250px;
+    align-items: center;
+}
+
+.search div img{
+    width:230px;
+    margin-top: 10px;
+}
