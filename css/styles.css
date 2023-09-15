@@ -66,6 +66,11 @@ h2, h3, h4, p{
     color: white;
 }
 
+.mainHeader form{
+    display: flex;
+    flex-wrap: nowrap;
+}
+
 .mainHeader form input{
     width: 200px;
     border: solid white;
