@@ -187,9 +187,25 @@ input::placeholder{
     margin-top: 20px;
     margin-bottom: 20px;
 }
-
+.genres div {
+    display:inline-block;
+    width: 270px;
+    align-items: center;
+    margin-top: 10px;
+    margin-bottom: 20px;
+    margin-left: 50px;
+    margin-right: 50px;
+}
+.genres div img{
+    width:250px;
+    margin-top:5px;
+}
+.genres div h3{
+    padding-left: 95px;
+}
 .genres div a{
     color: rgb(247, 134, 134);
+
 }
 
 /* detail genres */
