@@ -246,3 +246,47 @@ input::placeholder{
     width:230px;
     margin-top: 10px;
 }
+
+/* medidas responsive */
+
+
+@media(max-width:450px){
+    .mainHeader{
+        flex-direction: column;
+        height: 340px;
+    }
+
+    .mainHeader nav ul li{
+        width: 100%;
+        padding: 0;
+    }
+
+    .mainHeader img{
+        margin-top: 20px;
+    }
+
+    .mainFooter{
+        flex-direction: column;
+    }
+
+    .mainFooter ul li{
+        width: 58%;
+        text-align: center;
+    }
+
+    .detail{
+        flex-direction: column;
+    }
+
+    .detail_img{
+       align-self: center;
+       margin-right: 0;
+    }
+
+    .detail_items{
+        width: 325px;
+        margin-left: 25px;
+    }
+
+
+}
