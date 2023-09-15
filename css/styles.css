@@ -188,6 +188,10 @@ input::placeholder{
     margin-bottom: 20px;
 }
 
+.genres div a{
+    color: rgb(247, 134, 134);
+}
+
 /* detail genres */
 .det_genres{
     display: flex;
