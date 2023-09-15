@@ -23,10 +23,13 @@ ul, ol, li, a{
     width: 90%;
 }
 
-h2, p{
+h2, h3, h4, p{
     color: rgb(247, 134, 134);
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    margin-top: 20px;
 }
 
+/* header */
 
 .mainHeader{
     display: flex;
@@ -68,119 +71,18 @@ h2, p{
     border: solid white;
 }
 
+input::placeholder{
+    color: rgb(247, 134, 134);
+}
+
 .mainHeader form button{
     width: 30px;
     border: solid white;
     background-color: white;
+    color: rgb(247, 134, 134);
 }
 
-.peliculasPopulares{
-    display: flex;
-    justify-content: space-evenly;
-    flex-wrap: wrap;
-    flex-direction: row;
-    width: 100%;
-}
-
-.peliculasPopulares div{
-    display: inline-block;
-    width: 250px;
-    align-items: center;
-}
-
-.peliculasPopulares div h3{
-    color:rgb(247, 134, 134);
-    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
-    margin-top: 20px;
-}
-
-.peliculasPopulares div p{
-    color:rgb(247, 134, 134);
-    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
-    margin-top: 20px;
-}
-
-.peliculasPopulares div img{
-    width: 230px;
-    margin-top: 5px;
-}
-
-.peliculasPopulares div h4{
-    color:rgb(247, 134, 134);
-    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
-}
-
-.seriesPopulares{
-    display: flex;
-    justify-content: space-evenly;
-    flex-wrap: wrap;
-    flex-direction: row;
-    width: 100%;
-}
-
-.seriesPopulares div{
-    display: inline-block;
-    width: 250px;
-    align-items: center;
-}
-
-.seriesPopulares div h3{
-    color:rgb(247, 134, 134);
-    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
-    margin-top: 20px;
-}
-
-.seriesPopulares div p{
-    color:rgb(247, 134, 134);
-    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
-    margin-top: 20px;
-}
-
-.seriesPopulares div img{
-    width: 230px;
-    margin-top: 5px;
-}
-
-.seriesPopulares div h4{
-    color:rgb(247, 134, 134);
-    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
-}
-
-.recomendadoParaTi{
-    display: flex;
-    justify-content: space-evenly;
-    flex-wrap: wrap;
-    flex-direction: row;
-    width: 100%;
-}
-
-.recomendadoParaTi div{
-    display: inline-block;
-    width: 250px;
-    align-items: center;
-}
-
-.recomendadoParaTi div h3{
-    color:rgb(247, 134, 134);
-    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
-    margin-top: 20px;
-}
-
-.recomendadoParaTi div p{
-    color:rgb(247, 134, 134);
-    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
-    margin-top: 20px;
-}
-
-.recomendadoParaTi div img{
-    width: 230px;
-    margin-top: 5px;
-}
-
-.recomendadoParaTi div h4{
-    color:rgb(247, 134, 134);
-    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
-}
+/* footer */
 
 .mainFooter{
     display: flex;
@@ -203,7 +105,28 @@ h2, p{
     font-size: large;
 }
 
-/* css detail movie y serie */
+/* home */
+
+.secciones_index{
+    display: flex;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+    flex-direction: row;
+    width: 100%;
+}
+
+.secciones_index div{
+    display: inline-block;
+    width: 250px;
+    align-items: center;
+}
+
+.secciones_index div img{
+    width: 230px;
+    margin-top: 5px;
+}
+
+/* detail movie y serie */
 
 .detail{
     display: flex;
@@ -238,6 +161,7 @@ h2, p{
     color: rgb(247, 134, 134);
     font-size: large;
     margin-bottom: 15px;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
 }
 
 .detail_items ul li a{
@@ -252,7 +176,7 @@ h2, p{
     font-size: large;
 }
 
-/* css genres */
+/* genres */
 
 .genres{
     display: flex;
@@ -260,10 +184,11 @@ h2, p{
     flex-wrap: wrap;
     flex-direction: row;
     width: 100%;
-    margin-top: 100px;
-    margin-bottom: 100px;
+    margin-top: 20px;
+    margin-bottom: 20px;
 }
 
+/* detail genres */
 .det_genres{
     display: flex;
     justify-content: space-evenly;
@@ -282,15 +207,7 @@ h2, p{
     margin-top: 5px;
 }
 
-.det_genres div h3{
-    color:rgb(247, 134, 134);
-    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
-    margin-top: 20px;
-    align-items: center;
-}
-
-
-/* css favoritos */
+/* favoritos */
 .favoritos{
     display: flex;
     justify-content: space-evenly;
@@ -305,24 +222,7 @@ h2, p{
     align-items: center;
 }
 
-.favoritos div h3{
-    color:rgb(247, 134, 134);
-    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
-    margin-top: 20px;
-}
-
-.favoritos div p{
-    color:rgb(247, 134, 134);
-    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
-    margin-top: 20px;
-}
-
 .favoritos div img{
     width:230px;
-    margin-top:20px;
-}
-
-.favoritos div h4{
-    color:rgb(247, 134, 134);
-    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    margin-top: 10px;
 }
