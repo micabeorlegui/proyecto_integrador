@@ -110,6 +110,11 @@ input::placeholder{
     font-size: large;
 }
 
+.mainFooter img{
+    display: inline-block;
+    width: 130px;
+}
+
 /* home */
 
 .secciones_index{
@@ -123,7 +128,6 @@ input::placeholder{
 .secciones_index div{
     display: inline-block;
     width: 250px;
-    align-items: center;
 }
 
 .secciones_index div img{
@@ -148,14 +152,12 @@ input::placeholder{
     display: flex;
     flex-direction: column;
     flex-wrap: wrap;
-    align-content: flex-end center;
     width: 600px;
     margin-left: 20px;
 }
 
 .detail_items h2{
     font-size: xx-large;
-    display: inline;
 }
 
 .detail_items ul{
@@ -292,11 +294,18 @@ input::placeholder{
 
     .mainFooter{
         flex-direction: column;
+        height: 300px;
+        width: 100%;
     }
 
     .mainFooter ul li{
         width: 58%;
         text-align: center;
+       
+    }
+
+    .mainFooter img{
+        width: 150px;
     }
 
     .detail{
