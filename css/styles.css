@@ -123,7 +123,6 @@ input::placeholder{
 .secciones_index div{
     display: inline-block;
     width: 250px;
-    align-items: center;
 }
 
 .secciones_index div img{
@@ -148,14 +147,12 @@ input::placeholder{
     display: flex;
     flex-direction: column;
     flex-wrap: wrap;
-    align-content: flex-end center;
     width: 600px;
     margin-left: 20px;
 }
 
 .detail_items h2{
     font-size: xx-large;
-    display: inline;
 }
 
 .detail_items ul{
