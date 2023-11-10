@@ -110,6 +110,11 @@ input::placeholder{
     font-size: large;
 }
 
+.mainFooter img{
+    display: inline-block;
+    width: 130px;
+}
+
 /* home */
 
 .secciones_index{
@@ -289,11 +294,18 @@ input::placeholder{
 
     .mainFooter{
         flex-direction: column;
+        height: 300px;
+        width: 100%;
     }
 
     .mainFooter ul li{
         width: 58%;
         text-align: center;
+       
+    }
+
+    .mainFooter img{
+        width: 150px;
     }
 
     .detail{
