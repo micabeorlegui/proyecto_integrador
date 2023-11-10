@@ -11,8 +11,8 @@
     <div class="mainContainer">
         <header class="mainHeader">
             <a href="index.html"><img src="./img/logo.jpg" alt="logo"></a>
-            <form action="search-results.html" method="GET">
-                <input type="text" name="buscar" value="" placeholder="Buscar">
+            <form id="searchForm" action="search-results.html" method="GET">
+                <input type="text" id='searchInput'name="buscar" value="" placeholder="Buscar">
                 <button type="submit"><i class="fa-solid fa-magnifying-glass"></i></button>
             </form>
             <nav class="mainNav">
@@ -24,7 +24,7 @@
             </nav>
         </header>
         <main class="seudoBody">
-            <h2>Resultado de búsqueda</h2>
+            <h2 id="searchResults"> </h2>
             <section class="search">
 
                 <div>
@@ -67,5 +67,6 @@
             </ul>
         </footer>
     </div>
+    <script type="text/javascript" src="./js/search-results.js"></script>
 </body>
 </html>
