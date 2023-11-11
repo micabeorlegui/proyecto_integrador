@@ -183,6 +183,33 @@ input::placeholder{
     font-size: large;
 }
 
+#recomendaciones_boton{
+    margin-top: 50px;
+    background-color: rgb(247, 134, 134);
+    color: white;
+    border-radius: 30px;
+    border: solid rgb(247, 134, 134);
+    font-size: large;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+.recomendaciones{
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    justify-content: space-evenly;
+}
+
+.recomendaciones div{
+    display: none;
+    width: 250px;
+}
+
+.recomendaciones div img{
+    width: 230px;
+    margin-top: 20px;
+}
+
 /* genres */
 
 .genres{
