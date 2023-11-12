@@ -1,5 +1,5 @@
 let apiKey= 'd4da6f83d8fa5dad990cafe88cb4fbf7';
-let idPelicula= 2000;
+let idPelicula= 157350;
 
 fetch(`https://api.themoviedb.org/3/movie/${idPelicula}?api_key=${apiKey}&language=es`)
     .then(function(response){
@@ -55,14 +55,18 @@ fetch(`https://api.themoviedb.org/3/movie/${idPelicula}/recommendations?api_key=
         return response.json();
     })
     .then(function(data){
+        console.log(data)
         let pelisRecomendaciones= data.results;
         let imgRecomedaciones=[];
         let titulosRecomendaciones=[];
+        let idsRecomendaciones=[];
         for (let i=0; i<pelisRecomendaciones.length; i++){
             let imagen= pelisRecomendaciones[i].poster_path;
             imgRecomedaciones.push(imagen);
             let titulo= pelisRecomendaciones[i].title;
             titulosRecomendaciones.push(titulo);
+            let id= pelisRecomendaciones[i].id;
+            idsRecomendaciones.push(id)
         };
         
         let cincoNumRandom= [];
@@ -77,16 +81,19 @@ fetch(`https://api.themoviedb.org/3/movie/${idPelicula}/recommendations?api_key=
 
         let imgCincoRecomendaciones= []
         let tituloCincoRecomendaciones=[]
+        let idsCincoRecomendaciones=[]
         for (let i=0; i<5; i++){
             imgCincoRecomendaciones.push(imgRecomedaciones[cincoNumRandom[i]]);
-            tituloCincoRecomendaciones.push(titulosRecomendaciones[cincoNumRandom[i]])
+            tituloCincoRecomendaciones.push(titulosRecomendaciones[cincoNumRandom[i]]);
+            idsCincoRecomendaciones.push(idsRecomendaciones[cincoNumRandom[i]])
         };
 
         let boton= document.querySelector('#recomendaciones_boton');
+        let recomendacionesSect= document.querySelector('.recomendaciones');
+        let divs= recomendacionesSect.querySelectorAll('div');
+        let imagenes= recomendacionesSect.querySelectorAll('div a img');
+
         boton.addEventListener('click', function(){
-            let recomendacionesSect= document.querySelector('.recomendaciones');
-            let divs= recomendacionesSect.querySelectorAll('div');
-            let imagenes= recomendacionesSect.querySelectorAll('div a img');
             let baseUrl= "https://image.tmdb.org/t/p/w500";
             for (let i=0; i<imagenes.length; i++){
                 imagenes[i].src = `${baseUrl}${imgCincoRecomendaciones[i]}`;
@@ -94,9 +101,10 @@ fetch(`https://api.themoviedb.org/3/movie/${idPelicula}/recommendations?api_key=
             };
             for (let i=0; i<divs.length; i++){
                 divs[i].style.display= 'inline-block';
-            };
-            
+            };    
         });
+
+
     })
     .catch(function(error){
         console.log('El error es: ' + error)
