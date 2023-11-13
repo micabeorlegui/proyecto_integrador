@@ -11,20 +11,21 @@ fetch(urlPelicula)
        let h3Titulo= sectionPeliculas.querySelector('div h3 a');
        let imagen= sectionPeliculas.querySelector('img');
        let parrafo= sectionPeliculas.querySelector('p');
+       
        let primeraPelicula = data.results[0];
-    
        let titulo= primeraPelicula.title;
        let fotoPortada= primeraPelicula.poster_path;
        let estreno= primeraPelicula.release_date;
        let baseUrl= "/628Dep6AxEtDxjZoGP78TsOxYbK.jpg";  //corregir
-       h3Titulo.innerText=`${titulo}`; 
-       parrafo.innerText= `Estreno: ${estreno}`;
        imagen.src= `${baseUrl}` + `${fotoPortada}`; //corregir
        imagen.alt= titulo; //corregir    
+
+       h3Titulo.innerText=`${titulo}`; 
+       parrafo.innerText= `Estreno: ${estreno}`;
     });
     .catch(function(error){
-        console.log('El error es: ' + error);
-    });
+        console.log('El error es: ' + error)
+    })
 //parte de series populares
 let urlSeries= `https://api.themoviedb.org/3/tv/popular?api_key=${apiKey}&language=es`;
 fetch(urlSeries)
@@ -43,9 +44,9 @@ fetch(urlSeries)
        let tituloS= primeraSerie.name;
        let fotoPortadaS= primeraSerie.poster_path;
        let estrenoS= primeraSerie.first_air_date;
-       let baseUrlS= "/53aonG0QS3ynbYuuwhPtyoOwTDD.jpg";  //corregir
        h3TituloS.innerText=`${tituloS}`; 
        parrafoS.innerText= `Estreno: ${estrenoS}`;
+       let baseUrlS= "/53aonG0QS3ynbYuuwhPtyoOwTDD.jpg";  //corregir
        imagenS.src= `${baseUrlS}` + `${fotoPortadaS}`; //corregir
        imagenS.alt= titulo; //corregir
     
