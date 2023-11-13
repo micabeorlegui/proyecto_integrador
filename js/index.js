@@ -1,31 +1,75 @@
 let apiKey= "d4da6f83d8fa5dad990cafe88cb4fbf7"
 let urlPelicula= `https://api.themoviedb.org/3/movie/popular?api_key=${apiKey}&language=es`
+
 fetch(urlPelicula)
     .then(function(response){
         return response.json();
     })
     .then(function(data){
         console.log(data);
-        //invoco
-       let sectionPeliculas= document.querySelector('.sect_uno');
-       let h3Titulo= sectionPeliculas.querySelector('div h3 a');
-       let imagen= sectionPeliculas.querySelector('img');
-       let parrafo= sectionPeliculas.querySelector('p');
-       
-       let primeraPelicula = data.results[0];
-       let titulo= primeraPelicula.title;
-       let fotoPortada= primeraPelicula.poster_path;
-       let estreno= primeraPelicula.release_date;
-       let baseUrl= "/628Dep6AxEtDxjZoGP78TsOxYbK.jpg";  //corregir
-       imagen.src= `${baseUrl}` + `${fotoPortada}`; //corregir
-       imagen.alt= titulo; //corregir    
 
-       h3Titulo.innerText=`${titulo}`; 
-       parrafo.innerText= `Estreno: ${estreno}`;
-    });
+        let peliculasPopulares = data.results;
+        let titulosPeliculas= [];
+        let fotosDePortadasPelis= [];
+        let estrenosPelis= [];
+       /// console.log(titulosPeliculas)
+       /// console.log(fotosDePortadasPelis)
+       ///console.log(estrenosPelis)
+
+        for (let i=0; i<peliculasPopulares.length; i++){
+            let titulo= peliculasPopulares[i].title;
+            titulosPeliculas.push(titulo);
+            let imagen= peliculasPopulares[i].poster_path;
+            fotosDePortadasPelis.push(imagen);
+            let estreno= peliculasPopulares[i].release_date;
+            estrenosPelis.push(estreno)
+        };
+
+        let cincoNumRandom= [];
+        for(let i=0; i<5; i++){
+            let numRandom= Math.floor(Math.random() * titulosPeliculas.length);
+            if (!cincoNumRandom.includes(numRandom)){
+                cincoNumRandom.push(numRandom)
+            }else{
+                i--;
+            };
+        };
+
+        let tituloCincoPelis=[]
+        let imgCincoPelis= []
+        let estrenoCincoPelis=[]
+        console.log(tituloCincoPelis)
+        for (let i=0; i<5; i++){
+            tituloCincoPelis.push(titulosPeliculas[cincoNumRandom[i]]);
+            imgCincoPelis.push(fotosDePortadasPelis[cincoNumRandom[i]]);
+            estrenoCincoPelis.push(estrenosPelis[cincoNumRandom[i]])
+        };
+
+
+        //invoco
+        let sectionPeliculas= document.querySelector('.sect_uno');
+        let divsPeliculas= sectionPeliculas.querySelectorAll('div');
+
+
+
+        for (let i=0; i<divsPeliculas.length; i++){
+            let h3Titulo= divsPeliculas[i].querySelector('h3 a');
+            let imagen= divsPeliculas[i].querySelector('img');
+            let parrafo= divsPeliculas[i].querySelector('p');
+            
+            h3Titulo.innerText=`${tituloCincoPelis[i]}`;
+            let baseUrl= "https://image.tmdb.org/t/p/w500"; 
+            imagen.src= `${baseUrl}` + `${imgCincoPelis[i]}`; 
+            imagen.alt=`${tituloCincoPelis[i]}`;  
+            parrafo.innerText= `Estreno: ${estrenoCincoPelis[i]}`;
+
+        };
+
+    })
     .catch(function(error){
         console.log('El error es: ' + error)
     })
+
 //parte de series populares
 let urlSeries= `https://api.themoviedb.org/3/tv/popular?api_key=${apiKey}&language=es`;
 fetch(urlSeries)
@@ -34,51 +78,120 @@ fetch(urlSeries)
      })
     .then(function(data){
         console.log(data);
-        //invoco
-       let sectionSeries= document.querySelector('.sect_dos');
-       let h3TituloS= sectionSeries.querySelector('div h3 a');
-       let imagenS= sectionSeries.querySelector('img');
-       let parrafoS= sectionSeries.querySelector('p');
-       let primeraSerie = data.results[0];
+        let seriesPopulares= data.results;
+        let titulosSeries=[];
+        let fotosDePortadasSeries=[];
+        let estrenosSeries=[];
 
-       let tituloS= primeraSerie.name;
-       let fotoPortadaS= primeraSerie.poster_path;
-       let estrenoS= primeraSerie.first_air_date;
-       h3TituloS.innerText=`${tituloS}`; 
-       parrafoS.innerText= `Estreno: ${estrenoS}`;
-       let baseUrlS= "/53aonG0QS3ynbYuuwhPtyoOwTDD.jpg";  //corregir
-       imagenS.src= `${baseUrlS}` + `${fotoPortadaS}`; //corregir
-       imagenS.alt= titulo; //corregir
-    
-    });
+        for (let i=0; i<seriesPopulares.length; i++){
+            let titulo= seriesPopulares[i].name;
+            titulosSeries.push(titulo);
+            let imagen= seriesPopulares[i].poster_path;
+            fotosDePortadasSeries.push(imagen);
+            let estreno= seriesPopulares[i].first_air_date;
+            estrenosSeries.push(estreno)
+        };
+       
+        let cincoNumRandom= [];
+        for(let i=0; i<5; i++){
+            let numRandom= Math.floor(Math.random() * titulosSeries.length);
+            if (!cincoNumRandom.includes(numRandom)){
+                cincoNumRandom.push(numRandom)
+            }else{
+                i--;
+            };
+        };
+        
+        let tituloCincoSeries=[]
+        let imgCincoSeries= []
+        let estrenoCincoSeries=[]
+        console.log(tituloCincoSeries)
+        for (let i=0; i<5; i++){
+            tituloCincoSeries.push(titulosSeries[cincoNumRandom[i]]);
+            imgCincoSeries.push(fotosDePortadasSeries[cincoNumRandom[i]]);
+            estrenoCincoSeries.push(estrenosSeries[cincoNumRandom[i]])
+        };
+
+        let sectionSeries= document.querySelector('.sect_dos');
+        let divsSeries= sectionSeries.querySelectorAll('div');
+
+
+
+        for (let i=0; i<divsSeries.length; i++){
+            let h3Titulo= divsSeries[i].querySelector('h3 a');
+            let imagen= divsSeries[i].querySelector('img');
+            let parrafo= divsSeries[i].querySelector('p');
+            
+            h3Titulo.innerText=`${tituloCincoSeries[i]}`;
+            let baseUrl= "https://image.tmdb.org/t/p/w500"; 
+            imagen.src= `${baseUrl}` + `${imgCincoSeries[i]}`; 
+            imagen.alt=`${tituloCincoSeries[i]}`;  
+            parrafo.innerText= `Estreno: ${estrenoCincoSeries[i]}`;
+
+        };
+    })
     .catch(function(error){
         console.log('El error es: ' + error);
-    });
+    })
 
     /// parte de recomendado para ti
-    let urlRec= `https://api.themoviedb.org/3/person/popular?api_key=${apiKey}&language=es`;
+    let urlRec= `https://api.themoviedb.org/3/movie/top_rated?api_key=${apiKey}&language=es`;
     fetch(urlRec)
         .then(function(response){
           return response.json();
-        });
+        })
         .then(function(data){
             console.log(data);
-            //invoco
-           let sectionRec= document.querySelector('.sect_tres');
-           let h3TituloRec= sectionRec.querySelector('div h3 a');
-           let imagenRec= sectionRec.querySelector('img');
-           let parrafoRec= sectionRec.querySelector('p');
-           let primerRec = data.results[0];
+            let recomendados= data.results;
+            let titulosRecomendados=[];
+            let fotosDePortadasRecomendados=[];
+            let estrenosRecomendados=[];
+
+            for (let i=0; i<recomendados.length; i++){
+                let titulo= recomendados[i].title;
+                titulosRecomendados.push(titulo);
+                let imagen= recomendados[i].poster_path;
+                fotosDePortadasRecomendados.push(imagen);
+                let estreno= recomendados[i].release_date;
+                estrenosRecomendados.push(estreno)
+            };
+
+            let cincoNumRandom= [];
+            for(let i=0; i<5; i++){
+                let numRandom= Math.floor(Math.random() * titulosRecomendados.length);
+                if (!cincoNumRandom.includes(numRandom)){
+                    cincoNumRandom.push(numRandom)
+                }else{
+                    i--;
+                };
+            }
+        
+            let tituloCincoRecomendados=[]
+            let imgCincoRecomendados= []
+            let estrenoCincoRecomendados=[]
+            console.log(tituloCincoRecomendados)
+            for (let i=0; i<5; i++){
+                tituloCincoRecomendados.push(titulosRecomendados[cincoNumRandom[i]]);
+                imgCincoRecomendados.push(fotosDePortadasRecomendados[cincoNumRandom[i]]);
+                estrenoCincoRecomendados.push(estrenosRecomendados[cincoNumRandom[i]])
+            };
+
+            let sectionRecomendados= document.querySelector('.sect_tres');
+            let divsRecomendados= sectionRecomendados.querySelectorAll('div');
+
+            for (let i=0; i<divsRecomendados.length; i++){
+                let h3Titulo= divsRecomendados[i].querySelector('h3 a');
+                let imagen= divsRecomendados[i].querySelector('img');
+                let parrafo= divsRecomendados[i].querySelector('p');
+                
+                h3Titulo.innerText=`${tituloCincoRecomendados[i]}`;
+                let baseUrl= "https://image.tmdb.org/t/p/w500"; 
+                imagen.src= `${baseUrl}` + `${imgCincoRecomendados[i]}`; 
+                imagen.alt=`${tituloCincoRecomendados[i]}`;  
+                parrafo.innerText= `Estreno: ${estrenoCincoRecomendados[i]}`;
     
-           let tituloRec= primeraRec.name;
-           let fotoPortadaRec= primeraRec.poster_path;
-           let estrenoRec= primerRec.first_air_date;
-           let baseUrlRec= "/53aonG0QS3ynbYuuwhPtyoOwTDD.jpg";  //corregir
-           h3TituloRec.innerText=`${tituloRec}`; 
-           parrafoRec.innerText= `Estreno: ${estrenoRec}`;
-           imagenRec.src= `${baseUrlRec}` + `${fotoPortadaRec}`; //corregir
-           imagenRec.alt= titulo; //corregir
-        });
+            }; 
+        })
         .catch(function(error){
             console.log('El error es: ' + error);
-        });
+        })       

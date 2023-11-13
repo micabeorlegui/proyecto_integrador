@@ -6,6 +6,7 @@ fetch(`https://api.themoviedb.org/3/movie/${idPelicula}?api_key=${apiKey}&langua
         return response.json();
     })
     .then(function(data){
+        console.log(data)
         let fotoDePortada= data.poster_path;
         let titulo= data.title;
         let calificacion= data.vote_average;
