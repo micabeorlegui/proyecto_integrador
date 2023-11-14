@@ -1,5 +1,5 @@
 let apiKey= 'd4da6f83d8fa5dad990cafe88cb4fbf7';
-let idSerie= 1416;
+let idSerie= 37680;
 
 fetch(`https://api.themoviedb.org/3/tv/${idSerie}?api_key=${apiKey}&language=es`)
     .then(function(response){
@@ -105,6 +105,57 @@ fetch(`https://api.themoviedb.org/3/tv/${idSerie}/recommendations?api_key=${apiK
             };    
         });
 
+
+    })
+    .catch(function(error){
+        console.log('El error es: ' + error)
+    })
+
+    fetch(`https://api.themoviedb.org/3/tv/${idSerie}/reviews?api_key=${apiKey}&language=es`)
+    .then(function(response){
+        return response.json();
+    })
+    .then(function(data){
+        console.log(data)
+        let resenasSeries= data.results;
+
+        let botonRes= document.querySelector('#resenas_boton');
+        let resenasSect= document.querySelector('.resenas');
+        let listaLi= resenasSect.querySelector('div ul li');
+
+        if(resenasSeries.length>0){
+            for(let i=0; i<resenasSeries.length; i++){
+                let autor= resenasSeries[i].author;
+                let comentario= resenasSeries[i].content;
+
+                if(i==0){
+                    listaLi.innerHTML=`<b>${autor}</b>: ${comentario}`
+                }else{
+                    resenasSect.innerHTML+=`<div>
+                                                <ul>
+                                                    <li><b>${autor}</b>: ${comentario}</li>
+                                                </ul>
+                                            </div>`
+                };
+            };
+
+            let divsResenas= resenasSect.querySelectorAll('div');
+
+            for(let i=0; i<divsResenas.length; i++){
+                botonRes.addEventListener('click', function(){
+                    divsResenas[i].style.display= 'inline-block';
+                });
+            }
+
+        }else{
+            listaLi.innerHTML=`<strong>Lo siento, no hay reseñas disponibles :(</strong>`
+            let div= resenasSect.querySelector('div');
+            botonRes.addEventListener('click', function(){
+                div.style.display= 'inline-block';
+                div.style.backgroundColor= 'Bisque';
+                listaLi.style.color= 'rgb(247, 134, 134)';
+            });
+        };
 
     })
     .catch(function(error){
