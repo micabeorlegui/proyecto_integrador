@@ -233,6 +233,22 @@ input::placeholder{
     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
 }
 
+.trailer{
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    justify-content: space-evenly;
+}
+
+.trailer iframe{
+    display: none;
+    margin-top: 20px;
+}
+
+.trailer p{
+    display: none;
+}
+
 /* genres */
 
 .genres{

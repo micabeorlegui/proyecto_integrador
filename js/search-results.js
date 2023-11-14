@@ -6,7 +6,8 @@ busqueda.addEventListener("submit", function(event){
 })
 
 let queryString=location.search;
+console.log(queryString)
 let queryStringObj= new URLSearchParams(queryString);
 console.log(queryStringObj)
-let buscar= queryStringObj.get('busqueda'); //aca me va a dat lo que estoy buscando
+let buscar= queryStringObj.get('buscar'); //aca me va a dat lo que estoy buscando
 console.log(buscar)

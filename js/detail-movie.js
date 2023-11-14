@@ -114,7 +114,6 @@ fetch(`https://api.themoviedb.org/3/movie/${idPelicula}/reviews?api_key=${apiKey
         return response.json();
     })
     .then(function(data){
-        console.log(data)
         let resenasPeliculas= data.results;
 
         let botonRes= document.querySelector('#resenas_boton');
@@ -159,3 +158,30 @@ fetch(`https://api.themoviedb.org/3/movie/${idPelicula}/reviews?api_key=${apiKey
     .catch(function(error){
         console.log('El error es: ' + error)
     })
+
+    fetch(`https://api.themoviedb.org/3/movie/${idPelicula}/videos?api_key=${apiKey}&language=es`)
+        .then(function(response){
+            return response.json();
+        })
+        .then(function(data){
+            console.log(data)
+            let trailer= data.results[0];
+            let trailerId= trailer.id;
+            let youtube= trailer.site;
+
+            let trailerSect= document.querySelector('.trailer');
+
+            if (youtube === 'YouTube') {
+                let trailerUrl = 'https://www.youtube.com/watch?v=' + trailerId;
+                let iframe= trailerSect.querySelector('iframe');
+                iframe.src=`${trailerUrl}`;
+                iframe.style.display='inline-block'
+            } else {
+                let parrafo= trailerSect.querySelector('p');
+                parrafo.innerHTML=`<strong>Lo siento, no hay trailer disponible para esta película :(</strong>`;
+                parrafo.style.display='inline-block';
+            };
+        })
+        .catch(function(error){
+            console.log('El error es: ' + error)
+        })
