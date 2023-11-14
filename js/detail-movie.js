@@ -1,12 +1,11 @@
 let apiKey= 'd4da6f83d8fa5dad990cafe88cb4fbf7';
-let idPelicula= 157350;
+let idPelicula= 346698;
 
 fetch(`https://api.themoviedb.org/3/movie/${idPelicula}?api_key=${apiKey}&language=es`)
     .then(function(response){
         return response.json();
     })
     .then(function(data){
-        console.log(data)
         let fotoDePortada= data.poster_path;
         let titulo= data.title;
         let calificacion= data.vote_average;
@@ -56,7 +55,6 @@ fetch(`https://api.themoviedb.org/3/movie/${idPelicula}/recommendations?api_key=
         return response.json();
     })
     .then(function(data){
-        console.log(data)
         let pelisRecomendaciones= data.results;
         let imgRecomedaciones=[];
         let titulosRecomendaciones=[];
@@ -105,6 +103,57 @@ fetch(`https://api.themoviedb.org/3/movie/${idPelicula}/recommendations?api_key=
             };    
         });
 
+
+    })
+    .catch(function(error){
+        console.log('El error es: ' + error)
+    })
+
+fetch(`https://api.themoviedb.org/3/movie/${idPelicula}/reviews?api_key=${apiKey}&language=es`)
+    .then(function(response){
+        return response.json();
+    })
+    .then(function(data){
+        console.log(data)
+        let resenasPeliculas= data.results;
+
+        let botonRes= document.querySelector('#resenas_boton');
+        let resenasSect= document.querySelector('.resenas');
+        let listaLi= resenasSect.querySelector('div ul li');
+
+        if(resenasPeliculas.length>0){
+            for(let i=0; i<resenasPeliculas.length; i++){
+                let autor= resenasPeliculas[i].author;
+                let comentario= resenasPeliculas[i].content;
+
+                if(i==0){
+                    listaLi.innerHTML=`<b>${autor}</b>: ${comentario}`
+                }else{
+                    resenasSect.innerHTML+=`<div>
+                                                <ul>
+                                                    <li><b>${autor}</b>: ${comentario}</li>
+                                                </ul>
+                                            </div>`
+                };
+            };
+
+            let divsResenas= resenasSect.querySelectorAll('div');
+
+            for(let i=0; i<divsResenas.length; i++){
+                botonRes.addEventListener('click', function(){
+                    divsResenas[i].style.display= 'inline-block';
+                });
+            }
+
+        }else{
+            listaLi.innerHTML=`<strong>Lo siento, no hay reseñas disponibles :(</strong>`
+            let div= resenasSect.querySelector('div');
+            botonRes.addEventListener('click', function(){
+                div.style.display= 'inline-block';
+                div.style.backgroundColor= 'Bisque';
+                listaLi.style.color= 'rgb(247, 134, 134)';
+            });
+        };
 
     })
     .catch(function(error){
