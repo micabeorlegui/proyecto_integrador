@@ -8,14 +8,11 @@ document.addEventListener("DOMContentLoaded", function() {
         })
         .then(function (data){
            console.log(data)
-            const genresList = document.getElementById("genresList");
-
+            let genresList = document.getElementById("genresList");
             data.genres.forEach(genre => {
-                const genreItem = document.createElement("div");
+                let genreItem = document.createElement("div");
                 genreItem.innerHTML = `<li><a href="detail-genres.html?genreId=${genre.id}&genreName=${genre.name}">${genre.name}</a></li>`;
                 genresList.appendChild(genreItem.firstChild);
-                let titulo = document.querySelector(".genres")
-                titulo.style.color = "pink"
             });
         })
         .catch(function (error){

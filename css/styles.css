@@ -251,32 +251,32 @@ input::placeholder{
 
 /* genres */
 
-.genres{
-    display: flex;
-    justify-content: space-evenly;
-    flex-wrap: wrap;
-    flex-direction: row;
-    width: 100%;
-    margin-top: 20px;
-    margin-bottom: 20px;
-}
-.genres{
-    display:inline-block;
-    width: 270px;
-    align-items: center;
-    margin-top: 10px;
-    margin-bottom: 20px;
-    margin-left: 50px;
-    margin-right: 50px;
-}
-.genres{
-    padding-left: 95px;
-}
-.genres{
+body {
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    margin: 20px;
     color: rgb(247, 134, 134);
-
-}
-
+    border-radius: 20px;
+  }
+  
+  
+  .genres {
+    column-count: 3;
+    text-align: center;
+  }
+  
+  li {
+    margin-bottom: 20px;
+    background-color: rgb(247, 134, 134);
+  }
+  
+  a {
+    color: white;
+  }
+  
+  a:hover {
+    text-decoration: underline;
+  }
+  
 /* detail genres */
 .det_genres{
     display: flex;
