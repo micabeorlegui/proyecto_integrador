@@ -251,7 +251,7 @@ input::placeholder{
 
 /* genres */
 
-body {
+.seudoBody .generos{
     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
     margin: 20px;
     color: rgb(247, 134, 134);
@@ -264,16 +264,16 @@ body {
     text-align: center;
   }
   
-  li {
+  .genres li {
     margin-bottom: 20px;
     background-color: rgb(247, 134, 134);
   }
   
-  a {
+  .genres a {
     color: white;
   }
   
-  a:hover {
+  .genres a:hover {
     text-decoration: underline;
   }
   
