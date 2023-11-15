@@ -260,7 +260,7 @@ input::placeholder{
     margin-top: 20px;
     margin-bottom: 20px;
 }
-.genres div {
+.genres{
     display:inline-block;
     width: 270px;
     align-items: center;
@@ -269,14 +269,10 @@ input::placeholder{
     margin-left: 50px;
     margin-right: 50px;
 }
-.genres div img{
-    width:250px;
-    margin-top:5px;
-}
-.genres div h3{
+.genres{
     padding-left: 95px;
 }
-.genres div a{
+.genres{
     color: rgb(247, 134, 134);
 
 }
