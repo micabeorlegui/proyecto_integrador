@@ -53,7 +53,7 @@ fetch(urlPelicula)
 
 
         for (let i=0; i<divsPeliculas.length; i++){
-            let h3Titulo= divsPeliculas[i].querySelector('h3 a');
+            let h3Titulo= divsPeliculas[i].querySelector('h3');
             let imagen= divsPeliculas[i].querySelector('img');
             let parrafo= divsPeliculas[i].querySelector('p');
             
@@ -118,7 +118,7 @@ fetch(urlSeries)
 
 
         for (let i=0; i<divsSeries.length; i++){
-            let h3Titulo= divsSeries[i].querySelector('h3 a');
+            let h3Titulo= divsSeries[i].querySelector('h3');
             let imagen= divsSeries[i].querySelector('img');
             let parrafo= divsSeries[i].querySelector('p');
             
@@ -180,7 +180,7 @@ fetch(urlSeries)
             let divsRecomendados= sectionRecomendados.querySelectorAll('div');
 
             for (let i=0; i<divsRecomendados.length; i++){
-                let h3Titulo= divsRecomendados[i].querySelector('h3 a');
+                let h3Titulo= divsRecomendados[i].querySelector('h3');
                 let imagen= divsRecomendados[i].querySelector('img');
                 let parrafo= divsRecomendados[i].querySelector('p');
                 

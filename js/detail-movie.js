@@ -1,5 +1,5 @@
 let apiKey= 'd4da6f83d8fa5dad990cafe88cb4fbf7';
-let idPelicula= 346698;
+let idPelicula= 157350;
 
 fetch(`https://api.themoviedb.org/3/movie/${idPelicula}?api_key=${apiKey}&language=es`)
     .then(function(response){
