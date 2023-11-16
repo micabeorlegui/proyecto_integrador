@@ -18,11 +18,13 @@ fetch(urlPelicula)
 
         for (let i=0; i<peliculasPopulares.length; i++){
             let titulo= peliculasPopulares[i].title;
+            if (titulo.length<=12){
             titulosPeliculas.push(titulo);
             let imagen= peliculasPopulares[i].poster_path;
             fotosDePortadasPelis.push(imagen);
             let estreno= peliculasPopulares[i].release_date;
             estrenosPelis.push(estreno)
+            }
         };
 
         let cincoNumRandom= [];
@@ -85,11 +87,13 @@ fetch(urlSeries)
 
         for (let i=0; i<seriesPopulares.length; i++){
             let titulo= seriesPopulares[i].name;
-            titulosSeries.push(titulo);
+            if (titulo.length<=12){
+                titulosSeries.push(titulo);
             let imagen= seriesPopulares[i].poster_path;
             fotosDePortadasSeries.push(imagen);
             let estreno= seriesPopulares[i].first_air_date;
             estrenosSeries.push(estreno)
+            }
         };
        
         let cincoNumRandom= [];
@@ -149,11 +153,13 @@ fetch(urlSeries)
 
             for (let i=0; i<recomendados.length; i++){
                 let titulo= recomendados[i].title;
+                if (titulo.length<=12){
                 titulosRecomendados.push(titulo);
                 let imagen= recomendados[i].poster_path;
                 fotosDePortadasRecomendados.push(imagen);
                 let estreno= recomendados[i].release_date;
                 estrenosRecomendados.push(estreno)
+                }
             };
 
             let cincoNumRandom= [];
