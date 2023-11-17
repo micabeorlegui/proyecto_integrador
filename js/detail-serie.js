@@ -181,7 +181,7 @@ document.addEventListener("DOMContentLoaded", function(){
                 let trailerSect= document.querySelector('.trailer');
 
                 if (youtube === 'YouTube') {
-                    let trailerUrl = 'https://www.youtube.com/watch?v=' + trailerId;
+                    let trailerUrl = 'https://www.youtube.com/embed/' + trailerId;
                     let iframe= trailerSect.querySelector('iframe');
                     iframe.src=`${trailerUrl}`;
                     iframe.style.display='inline-block'

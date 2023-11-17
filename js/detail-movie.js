@@ -94,7 +94,7 @@ document.addEventListener("DOMContentLoaded", function(){
             let boton= document.querySelector('#recomendaciones_boton');
             let recomendacionesSect= document.querySelector('.recomendaciones');
             let divs= recomendacionesSect.querySelectorAll('div');
-            let a= recomendacionesSect.querySelectorAll('a');
+            let a= recomendacionesSect.querySelector('a');
             let imagenes= recomendacionesSect.querySelectorAll('img');
 
             boton.addEventListener('click', function(){
@@ -102,7 +102,7 @@ document.addEventListener("DOMContentLoaded", function(){
                 for (let i=0; i<imagenes.length; i++){
                     imagenes[i].src = `${baseUrl}${imgCincoRecomendaciones[i]}`;
                     imagenes[i].alt = `${tituloCincoRecomendaciones[i]}`;
-                    a[i].href+=`?id=${idsCincoRecomendaciones[i]}`;
+                    a[i].href+=`?id=${tituloCincoRecomendaciones[i]}`;
                 };
                 for (let i=0; i<divs.length; i++){
                     divs[i].style.display= 'inline-block';
