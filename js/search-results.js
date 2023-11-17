@@ -30,7 +30,7 @@ document.addEventListener("DOMContentLoaded", function(){
 
                     searchDivs[i].querySelector('h3').innerText=`${tituloPelicula}`;
                     let a= searchDivs[i].querySelector('a');
-                    a.href= `detail-movie.html?movie_id=${idPelicula}`
+                    a.href= `detail-movie.html?id=${idPelicula}`
                     let imagen= searchDivs[i].querySelector('img');
                     imagen.src=`${imgPelicula}`;
                     imagen.alt=`${tituloPelicula}`;
@@ -67,7 +67,7 @@ document.addEventListener("DOMContentLoaded", function(){
 
                     searchDivs[i].querySelector('h3').innerText=`${tituloSerie}`;
                     let a= searchDivs[i].querySelector('a');
-                    a.href= `detail-serie.html?series_id=${idSerie}`
+                    a.href= `detail-serie.html?id=${idSerie}`
                     let imagen= searchDivs[i].querySelector('img');
                     imagen.src=`${imgSerie}`;
                     imagen.alt=`${tituloSerie}`;
