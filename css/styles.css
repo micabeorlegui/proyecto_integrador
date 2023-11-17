@@ -249,6 +249,21 @@ input::placeholder{
 .trailer p{
     display: none;
 }
+.otros{
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    justify-content: space-evenly;
+}
+
+.otros iframe{
+    display: none;
+    margin-top: 20px;
+}
+
+.otros p{
+    display: none;
+}
 
 /* genres */
 
@@ -335,7 +350,10 @@ input::placeholder{
 .search div img{
     width:230px;
     margin-top: 10px;
+    height:340px;
+
 }
+
 
 /* medidas responsive */
 
