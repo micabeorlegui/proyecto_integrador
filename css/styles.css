@@ -400,5 +400,15 @@ input::placeholder{
         margin-left: 25px;
     }
 
+    .trailer iframe{
+        width:350px;
+        height:175px;
+    }
+
+    .otros iframe{
+        width:350px;
+        height:175px;
+    }
+
 
 }
