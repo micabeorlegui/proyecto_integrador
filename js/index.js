@@ -1,7 +1,6 @@
 let apiKey= "d4da6f83d8fa5dad990cafe88cb4fbf7"
-let urlPelicula= `https://api.themoviedb.org/3/movie/popular?api_key=${apiKey}&language=es`
 
-fetch(urlPelicula)
+fetch(`https://api.themoviedb.org/3/movie/popular?api_key=${apiKey}&language=es`)
     .then(function(response){
         return response.json();
     })

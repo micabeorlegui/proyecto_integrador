@@ -180,14 +180,16 @@ document.addEventListener("DOMContentLoaded", function(){
 
                 let trailerSect= document.querySelector('.trailer');
 
-                if (youtube === 'YouTube') {
-                    let trailerUrl = 'https://www.youtube.com/embed/' + trailerKey;
-                    console.log(trailerUrl);
-                    let iframe= trailerSect.querySelector('iframe');
-                    iframe.src=`${trailerUrl}`;
-                    iframe.style.display='inline-block'
-                } else {
-                    trailerSect.innerHTML=`<p><strong>Lo siento, no hay trailer disponible para esta película :(</strong></p>`;
+                if(!trailers || trailers.length === 0){
+                    trailerSect.innerHTML+=`<p><strong>Lo siento, no hay trailer disponible :(</strong></p>`;
+                }else{
+                    if (youtube === 'YouTube') {
+                        let trailerUrl = 'https://www.youtube.com/embed/' + trailerKey;
+                        console.log(trailerUrl);
+                        let iframe= trailerSect.querySelector('iframe');
+                        iframe.src=`${trailerUrl}`;
+                        iframe.style.display='inline-block'
+                    };
                 };
 
                 let botonOtros= document.querySelector('.otros_boton');

@@ -168,32 +168,56 @@ document.addEventListener("DOMContentLoaded", function(){
             console.log('El error es: ' + error)
         })
 
-        fetch(`https://api.themoviedb.org/3/tv/${idSerie}/videos?api_key=${apiKey}&language=es`)
-            .then(function(response){
-                return response.json();
-            })
-            .then(function(data){
-                console.log(data)
-                let trailer= data.results[0];
-                let trailerKey= trailer.key;
-                let youtube= trailer.site;
+    fetch(`https://api.themoviedb.org/3/tv/${idSerie}/videos?api_key=${apiKey}&language=es`)
+        .then(function(response){
+            return response.json();
+        })
+        .then(function(data){
+            console.log(data)
+            let trailers= data.results;
+            console.log(trailers)
+            let trailer= data.results[0];
+            let trailerKey= trailer.key;
+            let youtube= trailer.site;
 
-                let trailerSect= document.querySelector('.trailer');
+            let trailerSect= document.querySelector('.trailer');
 
+            if(!trailers || trailers.length === 0){
+                trailerSect.innerHTML+=`<p><strong>Lo siento, no hay trailer disponible :(</strong></p>`;
+            }else{
                 if (youtube === 'YouTube') {
-               
                     let trailerUrl = 'https://www.youtube.com/embed/' + trailerKey;
                     console.log(trailerUrl);
                     let iframe= trailerSect.querySelector('iframe');
                     iframe.src=`${trailerUrl}`;
                     iframe.style.display='inline-block'
-                } else {
-                    let parrafo= trailerSect.querySelector('p');
-                    parrafo.innerHTML=`<strong>Lo siento, no hay trailer disponible para esta película :(</strong>`;
-                    parrafo.style.display='inline-block';
                 };
-            })
-            .catch(function(error){
-                console.log('El error es: ' + error)
-            })
+            };
+
+            let botonOtros= document.querySelector('.otros_boton');
+            botonOtros.addEventListener('click', function(){
+                let otrosSect= document.querySelector('.otros');
+                if(trailers.length==1){
+                    otrosSect.innerHTML=`<p><strong>Lo siento, no hay más videos disponibles :(</strong></p>`;
+                }else{
+                    for (let i=1; i<trailers.length; i++){
+                        let otros= trailers[i];
+                        let otrosKey= otros.key;
+                        let otrosYoutube= otros.site;
+                        
+                        if (otrosYoutube === 'YouTube') {
+                            let otrosUrl = 'https://www.youtube.com/embed/' + otrosKey;
+                            otrosSect.innerHTML+=`<iframe width="560" height="315" src="${otrosUrl}" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>`
+                            let iframe = document.querySelectorAll('.otros iframe');
+                            for(let i=0; i<iframe.length; i++){
+                                iframe[i].style.display='inline-block';
+                            };
+                        };
+                    };
+                }
+            });
+        })
+        .catch(function(error){
+            console.log('El error es: ' + error)
+        })
 })
