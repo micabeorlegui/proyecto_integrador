@@ -265,6 +265,14 @@ input::placeholder{
     text-align: center;
   }
   
+.genres ul {
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    margin: 20px;
+    color: rgb(247, 134, 134);
+    border-radius: 20px;
+
+}
+
   .genres li {
     margin-bottom: 20px;
     background-color: rgb(247, 134, 134);
@@ -279,23 +287,28 @@ input::placeholder{
   }
   
 /* detail genres */
-.det_genres{
+.detalleGenerosPelis{
     display: flex;
     justify-content: space-evenly;
-    flex-wrap: wrap;
+    flex-wrap: nowrap;
     flex-direction: row;
     width: 100%;
 }
 
-.det_genres div{
+
+
+.detalleGenerosPelis div{
     display: inline-block;
     width: 250px;
 }
 
-.det_genres div img{
+.detalleGenerosPelis div img{
     width: 230px;
     margin-top: 5px;
+    height:340px;
 }
+
+
 
 /* favoritos */
 .favoritos{

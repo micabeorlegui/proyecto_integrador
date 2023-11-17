@@ -1,21 +1,46 @@
-document.addEventListener("DOMContentLoaded", function() {
-    const apiKey = "d4da6f83d8fa5dad990cafe88cb4fbf7";
-    const urlGenerosPeliculas = `https://api.themoviedb.org/3/genre/movie/list?api_key=${apiKey}&language=es`;
+let apiKey = "d4da6f83d8fa5dad990cafe88cb4fbf7";
+let urlGenerosPeliculas = `https://api.themoviedb.org/3/genre/movie/list?api_key=${apiKey}&language=es`;
+let urlGenerosSeries = `https://api.themoviedb.org/3/genre/tv/list?api_key=${apiKey}&language=es`
 
-    fetch(urlGenerosPeliculas)
-        .then(function(response){
-        return response.json();
-        })
-        .then(function (data){
-           console.log(data)
-            let genresList = document.getElementById("genresList");
-            data.genres.forEach(genre => {
-                let genreItem = document.createElement("div");
-                genreItem.innerHTML = `<li><a href="detail-genres.html?genreId=${genre.id}&genreName=${genre.name}">${genre.name}</a></li>`;
-                genresList.appendChild(genreItem.firstChild);
-            });
-        })
-        .catch(function (error){
-            console.log('El error es: ' + error)
-        })
-});
+let ListaPeliculas = document.querySelector("#GenerosPelisId")
+let ListaSeries = document.querySelector("#GenerosSeriesId")
+
+fetch(urlGenerosPeliculas)
+ .then(function(response) {
+      return response.json()
+     
+    })
+ .then(function(data) {
+       console.log(data)
+     miData = data.genres
+     contenido = " "
+     for (let i = 0; i < miData.length; i++){
+        contenido +=
+        `<a href=./detail-genres.html?id=${miData[i].id}"><li>${miData[i].name}</li></a>`
+        ListaPeliculas.innerHTML = contenido
+     }
+    })
+ .catch(function(error){
+     console.log("Error: " + error);
+
+    })
+
+    fetch(urlGenerosSeries)
+    .then(function(response) {
+         return response.json()
+        
+       })
+    .then(function(data) {
+          console.log(data)
+        miData = data.genres
+        contenido = " "
+        for (let i = 0; i < miData.length; i++){
+           contenido +=
+           `<a href=./detail-genres.html?id=${miData[i].id}"><li>${miData[i].name}</li></a>`
+           ListaSeries.innerHTML = contenido
+        }
+       })
+    .catch(function(error){
+        console.log("Error: " + error);
+   
+       })
