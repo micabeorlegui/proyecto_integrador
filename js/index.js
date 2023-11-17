@@ -16,7 +16,7 @@ fetch(urlPelicula)
 
         for (let i=0; i<peliculasPopulares.length; i++){
             let titulo= peliculasPopulares[i].title;
-            if (titulo.length<=12){
+            if (titulo.length<=20){
             titulosPeliculas.push(titulo);
             let imagen= peliculasPopulares[i].poster_path;
             fotosDePortadasPelis.push(imagen);
