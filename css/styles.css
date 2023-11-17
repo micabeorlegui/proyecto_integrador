@@ -246,6 +246,10 @@ input::placeholder{
     margin-top: 20px;
 }
 
+.trailer p{
+    margin-left: 20px;
+}
+
 .otros{
     display: flex;
     flex-wrap: wrap;

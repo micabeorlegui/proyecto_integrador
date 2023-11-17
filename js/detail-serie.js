@@ -176,15 +176,15 @@ document.addEventListener("DOMContentLoaded", function(){
             console.log(data)
             let trailers= data.results;
             console.log(trailers)
-            let trailer= data.results[0];
-            let trailerKey= trailer.key;
-            let youtube= trailer.site;
 
             let trailerSect= document.querySelector('.trailer');
 
             if(!trailers || trailers.length === 0){
                 trailerSect.innerHTML+=`<p><strong>Lo siento, no hay trailer disponible :(</strong></p>`;
             }else{
+                let trailer= data.results[0];
+                let trailerKey= trailer.key;
+                let youtube= trailer.site;
                 if (youtube === 'YouTube') {
                     let trailerUrl = 'https://www.youtube.com/embed/' + trailerKey;
                     console.log(trailerUrl);
@@ -197,7 +197,7 @@ document.addEventListener("DOMContentLoaded", function(){
             let botonOtros= document.querySelector('.otros_boton');
             botonOtros.addEventListener('click', function(){
                 let otrosSect= document.querySelector('.otros');
-                if(trailers.length==1){
+                if(trailers.length<=1){
                     otrosSect.innerHTML=`<p><strong>Lo siento, no hay más videos disponibles :(</strong></p>`;
                 }else{
                     for (let i=1; i<trailers.length; i++){
