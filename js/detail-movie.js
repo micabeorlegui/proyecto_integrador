@@ -172,13 +172,15 @@ document.addEventListener("DOMContentLoaded", function(){
             .then(function(data){
                 console.log(data)
                 let trailer= data.results[0];
-                let trailerId= trailer.id;
+                let trailerKey= trailer.key;
                 let youtube= trailer.site;
 
                 let trailerSect= document.querySelector('.trailer');
 
                 if (youtube === 'YouTube') {
-                    let trailerUrl = 'https://www.youtube.com/watch?v=' + trailerId;
+                   
+                    let trailerUrl = 'https://www.youtube.com/embed/' + trailerKey;
+                    console.log(trailerUrl);
                     let iframe= trailerSect.querySelector('iframe');
                     iframe.src=`${trailerUrl}`;
                     iframe.style.display='inline-block'
