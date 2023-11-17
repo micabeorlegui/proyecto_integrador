@@ -72,6 +72,10 @@ document.addEventListener("DOMContentLoaded", function(){
                     imagen.src=`${imgSerie}`;
                     imagen.alt=`${tituloSerie}`;
                     searchDivs[i].querySelector('p').innerHTML=`<b>Estreno:</b> ${estreno}`
+                    if (tituloSerie.length<25 ){
+                        console.log("Cumple la condición")
+                        imagen.style.marginTop= "32px";
+                    }
                     
                 };
             };
@@ -80,6 +84,5 @@ document.addEventListener("DOMContentLoaded", function(){
         .catch(function(error){
             console.log('El error es: ' + error)
         })
-
 })
 

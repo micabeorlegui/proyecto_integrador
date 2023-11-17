@@ -59,6 +59,7 @@ document.addEventListener("DOMContentLoaded", function(){
             return response.json();
         })
         .then(function(data){
+            console.log(data)
             let pelisRecomendaciones= data.results;
             let imgRecomedaciones=[];
             let titulosRecomendaciones=[];
@@ -90,7 +91,7 @@ document.addEventListener("DOMContentLoaded", function(){
                 tituloCincoRecomendaciones.push(titulosRecomendaciones[cincoNumRandom[i]]);
                 idsCincoRecomendaciones.push(idsRecomendaciones[cincoNumRandom[i]])
             };
-
+            console.log(idsCincoRecomendaciones)
             let boton= document.querySelector('#recomendaciones_boton');
             let recomendacionesSect= document.querySelector('.recomendaciones');
             let divs= recomendacionesSect.querySelectorAll('div');
@@ -171,24 +172,52 @@ document.addEventListener("DOMContentLoaded", function(){
             })
             .then(function(data){
                 console.log(data)
-                let trailer= data.results[0];
-                let trailerId= trailer.id;
-                let youtube= trailer.site;
+
+                let trailers= data.results;
 
                 let trailerSect= document.querySelector('.trailer');
 
-                if (youtube === 'YouTube') {
-                    let trailerUrl = 'https://www.youtube.com/watch?v=' + trailerId;
-                    let iframe= trailerSect.querySelector('iframe');
-                    iframe.src=`${trailerUrl}`;
-                    iframe.style.display='inline-block'
-                } else {
-                    let parrafo= trailerSect.querySelector('p');
-                    parrafo.innerHTML=`<strong>Lo siento, no hay trailer disponible para esta película :(</strong>`;
-                    parrafo.style.display='inline-block';
+                if(!trailers || trailers.length === 0){
+                    trailerSect.innerHTML+=`<p><strong>Lo siento, no hay trailer disponible :(</strong></p>`;
+                }else{
+                    let trailer= data.results[0];
+                    let trailerKey= trailer.key;
+                    let youtube= trailer.site;
+                    if (youtube === 'YouTube') {
+                        let trailerUrl = 'https://www.youtube.com/embed/' + trailerKey;
+                        console.log(trailerUrl);
+                        let iframe= trailerSect.querySelector('iframe');
+                        iframe.src=`${trailerUrl}`;
+                        iframe.style.display='inline-block'
+                    };
                 };
+
+                let botonOtros= document.querySelector('.otros_boton');
+                botonOtros.addEventListener('click', function(){
+                    if(trailers.length<=1){
+                        let otrosSect= document.querySelector('.otros');
+                        otrosSect.innerHTML=`<p><strong>Lo siento, no hay más videos disponibles :(</strong></p>`;
+                    }else{
+                        for (let i=1; i<trailers.length; i++){
+                            let otros= trailers[i];
+                            let otrosKey= otros.key;
+                            let otrosYoutube= otros.site;
+                            let otrosSect= document.querySelector('.otros');
+                            
+                            if (otrosYoutube === 'YouTube') {
+                                let otrosUrl = 'https://www.youtube.com/embed/' + otrosKey;
+                                otrosSect.innerHTML+=`<iframe width="560" height="315" src="${otrosUrl}" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>`
+                                let iframe = document.querySelectorAll('.otros iframe');
+                                for(let i=0; i<iframe.length; i++){
+                                    iframe[i].style.display='inline-block';
+                                };
+                            };
+                        };
+                    }
+                });
             })
             .catch(function(error){
                 console.log('El error es: ' + error)
             })
+    
 })
