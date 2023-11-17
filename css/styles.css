@@ -246,23 +246,20 @@ input::placeholder{
     margin-top: 20px;
 }
 
-.trailer p{
-    display: none;
-}
 .otros{
     display: flex;
     flex-wrap: wrap;
-    flex-direction: column;
-    justify-content: space-evenly;
+    flex-direction: row;
 }
 
 .otros iframe{
     display: none;
     margin-top: 20px;
+    margin-right: 30px;
 }
 
 .otros p{
-    display: none;
+    margin-left: 20px;
 }
 
 /* genres */
