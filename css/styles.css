@@ -268,39 +268,24 @@ input::placeholder{
 
 /* genres */
 
-.seudoBody .generos{
-    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
-    margin: 20px;
-    color: rgb(247, 134, 134);
-    border-radius: 20px;
-  }
-  
-  
-  .genres {
-    column-count: 3;
-    text-align: center;
-  }
-  
-.genres ul {
-    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
-    margin: 20px;
-    color: rgb(247, 134, 134);
-    border-radius: 20px;
-
+.generos{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
 }
-
-  .genres li {
-    margin-bottom: 20px;
+  
+.genres ul li{
+    display: inline-block;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    margin: 20px;
     background-color: rgb(247, 134, 134);
-  }
-  
-  .genres a {
     color: white;
-  }
-  
-  .genres a:hover {
-    text-decoration: underline;
-  }
+    border-radius: 20px;
+    width: 280px;
+    text-align: center;
+    height: 25px;
+    padding-top: 2px;
+}
   
 /* detail genres */
 .detalleGenerosPelis{
@@ -310,8 +295,6 @@ input::placeholder{
     flex-direction: row;
     width: 100%;
 }
-
-
 
 .detalleGenerosPelis div{
     display: inline-block;
@@ -427,5 +410,7 @@ input::placeholder{
         height:175px;
     }
 
-
+    .genres ul li{
+        width: 350px;
+    }
 }
