@@ -15,7 +15,6 @@ document.addEventListener('DOMContentLoaded', function () {
 		.then(function(data){
 			console.log(data);
 			let miData = data.results;
-			document.querySelector('.seudoBody').innerHTML=nombreGenero
 			contenido = ' ';
 			if (miData[0]){
 				for (let i = 0; i < 5; i++) {
@@ -24,11 +23,11 @@ document.addEventListener('DOMContentLoaded', function () {
 									<a href="detail-movie.html?id=${miData[i].id}"><img src="https://image.tmdb.org/t/p/w500/${miData[i].poster_path} " alt="${miData[i].original_title}"></a>
 								</div>`
 	    		};
-
 				let sectGenres= document.querySelector('.detalleGeneros')
-				sectGenres.innerHTML = contenido;
+				sectGenres.innerHTML += `<h2>${nombreGenero}</h2>
+										${contenido}`;
 			}else{
-				sectGenres.innerHTML='No se encontraron resultados para este género :(';
+				sectGenres.innerHTML='<p>No se encontraron resultados para este género :(</p>';
 			};
 	})
 

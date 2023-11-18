@@ -14,7 +14,7 @@ fetch(urlGenerosPeliculas)
       miData = data.genres;
       contenido = " ";
       for (let i = 0; i < miData.length; i++){
-         contenido += `<a href=./detail-genres.html?id=${miData[i].id}&ng=${miData[i].name}"><li>${miData[i].name}</li></a>`;
+         contenido += `<a href="./detail-genres.html?id=${miData[i].id}&ng=${miData[i].name}"><li>${miData[i].name}</li></a>`;
          listaPeliculas.innerHTML = contenido;
       };
     })
@@ -31,7 +31,7 @@ fetch(urlGenerosSeries)
       miData = data.genres;
       contenido = " ";
       for (let i = 0; i < miData.length; i++){
-         contenido +=`<a href=./detail-genres.html?id=${miData[i].id}&ng=${miData[i].name}"><li>${miData[i].name}</li></a>`;
+         contenido +=`<a href="./detail-genres.html?id=${miData[i].id}&ng=${miData[i].name}"><li>${miData[i].name}</li></a>`;
          listaSeries.innerHTML = contenido;
       };
    })
