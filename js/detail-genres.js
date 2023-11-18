@@ -4,31 +4,26 @@ let qsIdGenero = urlparams.get('id');
 let DiscoverEndpointPelis = `https://api.themoviedb.org/3/discover/movie`;
 let DiscoverEndpointSeries = `https://api.themoviedb.org/3/discover/tv`;
 
-qsIdDivPelis = document.querySelector("#detail-genresPelis")
-
 let detailGenresPelis = `${DiscoverEndpointPelis}?api_key=${apiKey}&with_genres=${qsIdGenero}`;
 
 fetch(detailGenresPelis)
 	.then(function(response){
-	return response.json();
- })
+		return response.json();
+ 	})
 	.then(function(data){
-	 console.log(data);
-	 let miData = data.results;
-	 contenido = ' ';
-
-	  for (let i = 0; i < 5; i++) {
-		contenido +=
-		 `<section class="detalleGenerosPelis" id="detail-genresPelis">
-		   <div>
-			<a href="detail-movie.html?id=${miData[i].id}"><img src="https://image.tmdb.org/t/p/w500/${miData[i].poster_path} " alt=""></a>
-			<p>${miData[i].original_title}</p>
-		   </div>
-	      </section>`
+		console.log(data);
+		let miData = data.results;
+		contenido = ' ';
+		
+		for (let i = 0; i < 5; i++) {
+			contenido +=`<div class="detail-genres">
+							<h3>${miData[i].original_title}</h3>
+							<a href="detail-movie.html?id=${miData[i].id}"><img src="https://image.tmdb.org/t/p/w500/${miData[i].poster_path} " alt="${miData[i].original_title}"></a>
+						</div>`
 	    }
 
-qsIdDivPelis.innerHTML = contenido;
-
+		let sectGenres= document.querySelector('.detalleGeneros')
+		sectGenres.innerHTML = contenido;
 })
 
 .catch(function(error){
@@ -44,21 +39,18 @@ fetch(detailGenresSeries)
 	  return response.json();
     })
     .then(function(data){
-	 console.log(data);
-     let miData = data.results;
-	 contenido = ' ';
-
-	  for (let i = 0; i < 5; i++) {
-		contenido +=
-		 `<section class="detalleGenerosSeries" id="detail-genresSeries">
-		   <div>
-			<a href="detail-serie.html?id=${miData[i].id}"><img src="https://image.tmdb.org/t/p/w500/${miData[i].poster_path} " alt=""></a>
-			<p>${miData[i].original_name}</p>
-		   </div>
-	      </section>`
+		console.log(data);
+		let miData = data.results;
+	 	contenido = ' ';
+		for (let i = 0; i < 5; i++) {
+			contenido +=`<div class="detail-genres">
+							<h3>${miData[i].original_title}</h3>
+							<a href="detail-movie.html?id=${miData[i].id}"><img src="https://image.tmdb.org/t/p/w500/${miData[i].poster_path} " alt="${miData[i].original_title}"></a>
+						</div>`
 	    }
 
-qsIdDivSeries.innerHTML = contenido;
+		let sectGenres= document.querySelector('.detalleGeneros')
+		sectGenres.innerHTML = contenido;
 
 })
 

@@ -288,26 +288,22 @@ input::placeholder{
 }
   
 /* detail genres */
-.detalleGenerosPelis{
+.detalleGeneros{
     display: flex;
-    justify-content: space-evenly;
-    flex-wrap: nowrap;
+    flex-wrap: wrap;
     flex-direction: row;
-    width: 100%;
+    justify-content: space-evenly;
 }
 
-.detalleGenerosPelis div{
+.detalleGeneros div{
     display: inline-block;
     width: 250px;
 }
 
-.detalleGenerosPelis div img{
+.detalleGeneros div img{
     width: 230px;
-    margin-top: 5px;
-    height:340px;
+    margin-top: 20px;
 }
-
-
 
 /* favoritos */
 .favoritos{

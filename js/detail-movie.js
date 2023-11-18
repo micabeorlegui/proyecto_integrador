@@ -43,9 +43,9 @@ document.addEventListener("DOMContentLoaded", function(){
                     listaLi[i].innerHTML=`<b>Sinopsis:</b> ${sinopsis}`;
                 } else{
                     if (generoNombres.length>1){
-                        listaLi[i].innerHTML=`<a href="genres.html"><b>Géneros:</b> ${generoNombres.join(', ')}</a>`; 
+                        listaLi[i].innerHTML=`<a href="detail-genres.html"><b>Géneros:</b> ${generoNombres.join(', ')}</a>`; 
                     } else{
-                        listaLi[i].innerHTML=`<a href="genres.html"><b>Género:</b> ${generoNombres}</a>`;
+                        listaLi[i].innerHTML=`<a href="detail-genres.html"><b>Género:</b> ${generoNombres}</a>`;
                     };
                 };
             };
